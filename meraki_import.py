@@ -16,14 +16,14 @@ def global_Variables_To_Call ():
 def pull_Meraki_Ip_Addresses_Through_Api ():
 
     for org in meraki_orgs:
-        if org["name"] == "INSERT ORG YOU WANT TO SKIP IF APPLICABLE":
-            pass
-        else:
+        try:
             gather_device_info = meraki_dashboard.appliance.getOrganizationApplianceUplinkStatuses(org['id'])
             for device in gather_device_info:
                 device_mgmt_stats = meraki_dashboard.devices.getDeviceManagementInterface(device['serial'])
                 for key, value in device_mgmt_stats.items():
                     big_dict_energy.append(value)
+        except:
+            pass
 
 def convert_Meraki_Dict_To_Csv ():
     master_df = pd.DataFrame.from_dict(big_dict_energy)
