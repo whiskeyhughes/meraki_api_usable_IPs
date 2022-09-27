@@ -4,7 +4,7 @@ Meraki Usable IP Address Report!
 ## Description
 This is a script that will pull all active WAN IP Addresses and Subnet Masks from your Meraki Organization. This will convert the results into usable IP Addresses. 
 
-My use case was that I wanted to add all of our IP Addresses to Shodan to scan for vulnerabilites, and you couldn't add IP Ranges or Masks.  
+My use case was to add all of our IP Addresses to Shodan to scan for vulnerabilites, and you had to enter single IP Addresses to scan.  
 
 ## Badges
 
